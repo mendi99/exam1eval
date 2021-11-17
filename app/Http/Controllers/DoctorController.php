@@ -44,10 +44,17 @@ class DoctorController extends Controller
     {
         $nomDoc = $request->doctors;
         $nomPac = $request->pacients;
-        
+
         Doctor::where('active', 1)
       	->where('destination', 'San Diego')
       	->update(['delayed' => 1]);
+
+    }
+
+
+    public function edit(Request $request)
+    {
+        
 
     }
 

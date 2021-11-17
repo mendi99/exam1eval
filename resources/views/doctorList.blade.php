@@ -17,18 +17,22 @@
         @foreach($allDoctors as $doctor)
             <tr>
                 <td>{{ $doctor->nombre }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>{{ $doctor->apellidos }}</td>
+                </tr>
+                <tr>
+                    <td>{{ $doctor->num_pacientes }}
                     <form method="POST" action="/doctor/{{ $doctor->id }}">
                         @method('DELETE')
                         <input type="submit" value="delete">
                     </form>
-                </td>
-            </tr>
-            <tr>
-                <td>{{ $doctor->apellidos }}</td>
-            </tr>
-            <tr>
-                <td>{{ $doctor->num_pacientes }}</td>
-            </tr>
+                    <form method="GET" action="/edit">
+                        <input type="submit" value="Edit">
+                    </form>
+                    </td>
+                </tr>
         @endforeach
         </tbody>
     </table>
